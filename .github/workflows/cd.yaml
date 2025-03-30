@@ -1,0 +1,17 @@
+name: CD - Simulated Deployment
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Simulate deployment
+        run: |
+          mkdir -p deployment
+          cp check_security.py deployment/
+          echo "Deployed at $(date)" > deployment/deploy_log.txt
