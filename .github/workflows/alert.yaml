@@ -9,13 +9,14 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-      - name: Send Discord Notification
-        uses: Ilshidur/action-discord@master
+      - name: Send Discord Message
+        uses: discord-actions/message@v2
         with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
           message: |
-            🚀 A new commit was pushed to **main** branch!
+            🚀 A new commit was pushed to **main**!
             Repository: ${{ github.repository }}
             Commit: ${{ github.sha }}
             Author: ${{ github.actor }}
-            Message: ${{ github.event.head_commit.message }}
+          username: "GitHub Bot"
+          avatarUrl: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
