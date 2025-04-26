@@ -13,8 +13,10 @@ jobs:
         uses: discord-actions/message@v2
         with:
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
-          message: "Hello, from Github"
-          # webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
-          # message: "teste"
-          # username: "GitHub Bot"
-          # avatar: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+          message: |
+            🚀 A new commit was pushed to **main**!
+            Repository: ${{ github.repository }}
+            Commit: ${{ github.sha }}
+            Author: ${{ github.actor }}
+            Message: ${{ github.event.head_commit.message }}
+            [View Commit](${{ github.event.head_commit.url }})
