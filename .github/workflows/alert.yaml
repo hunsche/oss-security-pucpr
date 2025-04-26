@@ -19,4 +19,4 @@ jobs:
             Commit: ${{ github.sha }}
             Author: ${{ github.actor }}
           username: "GitHub Bot"
-          avatarUrl: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+          avatar: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
