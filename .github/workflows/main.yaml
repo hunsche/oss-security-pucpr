@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    name: CI - Code Quality, Security & Checks
+    name: CI - Code Quality, Security, Unit Tests & Checks
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -19,11 +19,15 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install flake8
+          pip install flake8 pytest
 
       - name: Lint with flake8
         run: |
           flake8 check_security.py --max-line-length=100
+
+      - name: Run unit tests with pytest
+        run: |
+          pytest --maxfail=1 --disable-warnings -q
 
       - name: Run security check script
         run: python check_security.py
