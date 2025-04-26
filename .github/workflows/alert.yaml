@@ -13,6 +13,8 @@ jobs:
         uses: discord-actions/message@v2
         with:
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
-          message: "teste"
-          username: "GitHub Bot"
-          avatar: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+          message: "Hello, from Github"
+          # webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+          # message: "teste"
+          # username: "GitHub Bot"
+          # avatar: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
